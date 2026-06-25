@@ -1,0 +1,36 @@
+{
+  "name": "Cant - La meva biblioteca de cant",
+  "short_name": "Cant",
+  "description": "La teva biblioteca de peces i tutorials de cant",
+  "start_url": "/Cant/",
+  "display": "standalone",
+  "background_color": "#eff1f2",
+  "theme_color": "#33495a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "cant-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "cant-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "cant-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "cant-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
