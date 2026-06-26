@@ -386,54 +386,6 @@
     pointer-events: none;
   }
 
-  /* STATS BAR */
-  .stats-bar {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem 1.25rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-  }
-
-  .stat-value {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: var(--primary);
-  }
-
-  .stat-label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .stat-clickable {
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    border-radius: 8px;
-    transition: var(--transition);
-  }
-  .stat-clickable:hover { background: var(--surface2); }
-  .stat-clickable.actiu { background: #e2e7e9; }
-  .stat-clickable.actiu .stat-value { color: var(--primary); }
-  .stat-clickable.actiu .stat-label { color: var(--primary); }
-
-  .stat-divider {
-    width: 1px;
-    background: var(--border);
-    align-self: stretch;
-  }
-
   /* GRID DE CARDS */
   .tutorials-grid {
     display: grid;
@@ -510,20 +462,28 @@
   }
 
   .card-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 4px 8px;
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    background: var(--surface2);
+    border-radius: 8px;
   }
 
-  .card-meta-row {
+  .card-meta-icon {
+    font-size: 14px;
+    color: var(--accent);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.825rem;
-    color: var(--text-muted);
   }
 
-  .card-meta-icon { font-size: 0.8rem; flex-shrink: 0; }
+  .card-meta-value {
+    color: var(--text);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
 
   .card-categoria {
     display: inline-block;
@@ -544,93 +504,6 @@
     border-top: 1px solid var(--surface2);
     line-height: 1.5;
   }
-
-  .card-galeria {
-    border-top: 1px solid var(--surface2);
-    padding-top: 0.6rem;
-  }
-
-  .card-galeria-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .card-galeria-fotos {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .card-galeria-foto {
-    width: 52px;
-    height: 52px;
-    border-radius: 6px;
-    object-fit: cover;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .card-galeria-foto:hover { opacity: 0.85; transform: scale(1.04); }
-
-  .card-galeria-foto-wrap {
-    position: relative;
-    width: 52px;
-    height: 52px;
-    flex-shrink: 0;
-  }
-
-  .card-galeria-foto-wrap .card-galeria-foto {
-    width: 52px;
-    height: 52px;
-  }
-
-  .card-galeria-foto-wrap:hover .card-galeria-foto { opacity: 0.75; transform: scale(1.04); }
-
-  .card-galeria-delete {
-    display: none;
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #243642;
-    border: 1.5px solid white;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0;
-    font-size: 10px;
-    color: white;
-    line-height: 1;
-    z-index: 2;
-  }
-
-  .card-galeria-foto-wrap:hover .card-galeria-delete { display: flex; }
-
-  .card-galeria-add {
-    width: 52px;
-    height: 52px;
-    border-radius: 6px;
-    border: 1.5px dashed var(--border);
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: var(--transition);
-    flex-shrink: 0;
-  }
-
-  .card-galeria-add:hover { border-color: var(--primary); color: var(--accent); background: var(--accent-bg); }
 
   .card-actions {
     display: flex;
@@ -751,11 +624,6 @@
 
   .card-franja { height: 6px; width: 100%; }
   .card-pills-row { display: flex; gap: 5px; flex-wrap: wrap; margin: 6px 0 4px; }
-  .pill-intencio { font-size: 0.72rem; font-weight: 500; padding: 2px 9px; border-radius: 20px; }
-  .pill-intencio.encurs { background: #FEF3C7; color: #92400E; }
-  .pill-intencio.proxima { background: #EDE9FE; color: #4C1D95; }
-  .pill-intencio.feta { background: #D1FAE5; color: #065F46; }
-  .pill-intencio.pendent { background: #E0F2FE; color: #0C4A6E; }
   .card-nota-sessio { font-size: 0.78rem; color: var(--text-muted); font-style: italic; padding: 5px 8px; border-left: 2px solid #D97706; background: #FFFBEB; margin: 4px 0; }
   .star-rating { display: flex; gap: 3px; margin: 4px 0 2px; }
   .star-rating .star { font-size: 18px; cursor: pointer; color: var(--border); transition: color 0.1s; line-height: 1; }
@@ -764,11 +632,6 @@
   .card-stars .star-on { color: #E8A000; }
   .card-stars .star-off { color: var(--border); }
   .card-vegades { font-size: 0.75rem; color: var(--text-muted); margin: 4px 0 6px; }
-  .chip-intencio { font-size: 0.85rem; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); background: none; color: var(--text-muted); cursor: pointer; transition: var(--transition); }
-  .chip-intencio.actiu[data-val=""] { background: var(--surface2); color: var(--text); border-color: var(--border); }
-  .chip-intencio.actiu[data-val="en curs"] { background: #FEF3C7; color: #92400E; border-color: #D97706; }
-  .chip-intencio.actiu[data-val="pendent"] { background: #E0F2FE; color: #0C4A6E; border-color: #0284C7; }
-  .chip-intencio.actiu[data-val="propera costura"] { background: #EDE9FE; color: #4C1D95; border-color: #7C3AED; }
 
   /* PORTADA INICI */
   .portada-inici {
@@ -895,66 +758,6 @@
   }
   .novetats-btn-tancar:hover { background: var(--primary); color: #fff; }
 
-  /* ── LIGHTBOX ── */
-  .lightbox-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.92);
-    z-index: 9999;
-    align-items: center;
-    justify-content: center;
-    touch-action: none;
-  }
-  .lightbox-overlay.actiu { display: flex; }
-  .lightbox-img {
-    max-width: 94vw;
-    max-height: 88vh;
-    border-radius: 8px;
-    object-fit: contain;
-    user-select: none;
-    transform-origin: center center;
-    transition: transform 0.1s;
-  }
-  .lightbox-close {
-    position: absolute;
-    top: 14px; right: 18px;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-    opacity: 0.8;
-    z-index: 10000;
-  }
-  .lightbox-close:hover { opacity: 1; }
-  .lightbox-nav {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 2.2rem;
-    cursor: pointer;
-    opacity: 0.6;
-    padding: 0.5rem;
-    z-index: 10000;
-    user-select: none;
-  }
-  .lightbox-nav:hover { opacity: 1; }
-  .lightbox-nav.prev { left: 10px; }
-  .lightbox-nav.next { right: 10px; }
-  .lightbox-nav.ocult { display: none; }
-  .lightbox-counter {
-    position: fixed;
-    bottom: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255,255,255,0.7);
-    font-size: 0.85rem;
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  .card-galeria-foto { cursor: zoom-in; }
-
   /* ── CELEBRACIÓ ── */
   .celebracio-overlay {
     display: none;
@@ -1022,7 +825,6 @@
     .form-grid { grid-template-columns: 1fr; }
     .form-group.full { grid-column: 1; }
     .tutorials-grid { grid-template-columns: 1fr; }
-    .stats-bar { gap: 1rem; }
     .search-box { margin-left: 0; width: 100%; }
     .search-box input { width: 100%; }
     .filters-bar { gap: 0.4rem; }
@@ -1168,23 +970,6 @@
       <p class="page-subtitle">Tots els tutorials guardats</p>
     </div>
 
-    <div id="stats-bar" class="stats-bar" style="display:none">
-      <div class="stat stat-clickable" onclick="filtrarPerStat('tots')" title="Veure tots">
-        <span class="stat-value" id="stat-total">0</span>
-        <span class="stat-label">Tutorials</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat stat-clickable" onclick="filtrarPerStat('fets')" title="Veure cantades">
-        <span class="stat-value" id="stat-fets">0</span>
-        <span class="stat-label">Cantades</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat stat-clickable" onclick="filtrarPerStat('pendents')" title="Veure pendents">
-        <span class="stat-value" id="stat-pendents">0</span>
-        <span class="stat-label">Pendents</span>
-      </div>
-    </div>
-
     <div class="filters-bar">
       <span class="filter-label">Categoria:</span>
       <button class="filter-chip active" data-cat="tots" onclick="setFilter('tots', this)">Tots</button>
@@ -1198,12 +983,6 @@
       </div>
     </div>
     <div class="filters-bar" style="margin-top:0.4rem">
-      <span class="filter-label">Estat:</span>
-      <button class="filter-chip active" data-intencio="totes" onclick="setFiltreIntencio('totes', this)">Totes</button>
-      <button class="filter-chip" data-intencio="en curs" onclick="setFiltreIntencio('en curs', this)">En curs</button>
-      <button class="filter-chip" data-intencio="propera costura" onclick="setFiltreIntencio('propera costura', this)">Propera costura</button>
-      <button class="filter-chip" data-intencio="fets" onclick="setFiltreIntencio('fets', this)">Cantades</button>
-      <button class="filter-chip" data-intencio="pendents" onclick="setFiltreIntencio('pendents', this)">Pendents</button>
       <div style="margin-left:auto;display:flex;gap:4px;">
         <button id="btn-vista-cards" class="btn-vista active" onclick="setVista('cards')" title="Vista cards"><i class="ti ti-layout-cards" style="font-size:16px" aria-hidden="true"></i></button>
         <button id="btn-vista-llista" class="btn-vista" onclick="setVista('llista')" title="Vista llista"><i class="ti ti-list" style="font-size:16px" aria-hidden="true"></i></button>
@@ -1268,13 +1047,6 @@
           <div id="f-url-status" style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;min-height:1.2em;"></div>
         </div>
         <div class="form-group full">
-          <label>Ja l'he fet?</label>
-          <div class="checkbox-row">
-            <input type="checkbox" id="f-feta">
-            <span>Sí, ja he fet aquest tutorial</span>
-          </div>
-        </div>
-        <div class="form-group full">
           <label for="f-comentari">Comentari personal</label>
           <textarea id="f-comentari" placeholder="Notes, impressions, dificultat..."></textarea>
         </div>
@@ -1299,13 +1071,7 @@
     <div class="edit-seccio edit-seccio-progres">
       <p class="edit-seccio-titol">El meu progrés</p>
       <div class="form-group">
-        <label>Estat</label>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
-          <button type="button" class="chip-intencio" data-val="" onclick="seleccionarIntencio(this)">Cap</button>
-          <button type="button" class="chip-intencio" data-val="pendent" onclick="seleccionarIntencio(this)">Pendent</button>
-          <button type="button" class="chip-intencio" data-val="en curs" onclick="seleccionarIntencio(this)">En curs</button>
-          <button type="button" class="chip-intencio" data-val="propera costura" onclick="seleccionarIntencio(this)">Propera costura</button>
-        </div>
+
       </div>
       <div class="form-group" style="margin-top:1rem">
         <label for="act-nota">Nota de sessió</label>
@@ -1319,15 +1085,6 @@
           <span class="star" data-v="3">★</span>
           <span class="star" data-v="4">★</span>
           <span class="star" data-v="5">★</span>
-        </div>
-      </div>
-      <div class="form-group" style="margin-top:1rem">
-        <label>Vegades fet</label>
-        <div style="display:flex;align-items:center;gap:12px;margin-top:6px">
-          <button type="button" class="btn btn-secondary" onclick="canviarVegades(-1)" style="width:32px;height:32px;padding:0;font-size:1.2rem">−</button>
-          <span id="act-vegades-num" style="font-size:1.4rem;font-weight:500;min-width:24px;text-align:center">0</span>
-          <button type="button" class="btn btn-secondary" onclick="canviarVegades(1)" style="width:32px;height:32px;padding:0;font-size:1.2rem">+</button>
-          <span style="font-size:0.85rem;color:var(--text-muted)">vegades</span>
         </div>
       </div>
     </div>
@@ -1473,7 +1230,6 @@
 
   let tutorials = [];
   let filtreActiu = 'tots';
-  let filtreIntencio = 'totes';
   let vistaActual = 'cards';
   let filesObertes = new Set();
 
@@ -1509,9 +1265,6 @@
   // Botó enrere del mòbil
   history.pushState({ view: 'inici' }, '', '');
   window.addEventListener('popstate', () => {
-    if (document.getElementById('lightbox').classList.contains('actiu')) {
-      tancarLightbox(); history.pushState({}, '', ''); return;
-    }
     if (document.getElementById('celebracio-overlay').classList.contains('actiu')) {
       tancarCelebracio(); history.pushState({}, '', ''); return;
     }
@@ -1526,18 +1279,6 @@
 
   function anarABiblioteca(filtre) {
     showViewDirect('biblioteca').then(() => {
-      if (filtre === 'fets' || filtre === 'pendents') {
-        filtreIntencio = filtre;
-        document.querySelectorAll('[data-intencio]').forEach(c => c.classList.remove('active'));
-        document.querySelector(`[data-intencio="${filtre}"]`)?.classList.add('active');
-        document.querySelectorAll('.stat-clickable').forEach(s => s.classList.remove('actiu'));
-        const idx = { fets: 1, pendents: 2 }[filtre];
-        document.querySelectorAll('.stat-clickable')[idx]?.classList.add('actiu');
-      } else {
-        filtreIntencio = 'totes';
-        document.querySelectorAll('[data-intencio]').forEach(c => c.classList.remove('active'));
-        document.querySelector('[data-intencio="totes"]')?.classList.add('active');
-      }
       renderTutorials();
     });
   }
@@ -1604,120 +1345,6 @@
     draw();
   }
 
-  // ── LIGHTBOX ──
-  let lbFotos = [], lbIdx = 0;
-  let lbZoom = 1, lbPanX = 0, lbPanY = 0;
-  let lbPinchDist = null;
-  let lbSwipeX = null, lbSwipeY = null;
-
-  function obrirLightbox(img) {
-    const wrap = img.closest('.card-galeria-fotos');
-    const totes = wrap ? Array.from(wrap.querySelectorAll('.card-galeria-foto')) : [img];
-    lbFotos = totes.map(i => i.src);
-    lbIdx = totes.indexOf(img);
-    if (lbIdx < 0) lbIdx = 0;
-    lbZoom = 1; lbPanX = 0; lbPanY = 0;
-    actualitzarLightbox();
-    document.getElementById('lightbox').classList.add('actiu');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function tancarLightbox() {
-    document.getElementById('lightbox').classList.remove('actiu');
-    document.body.style.overflow = '';
-    lbZoom = 1; lbPanX = 0; lbPanY = 0;
-    aplicarTransformLb();
-  }
-
-  function actualitzarLightbox() {
-    const imgEl = document.getElementById('lightbox-img');
-    imgEl.src = lbFotos[lbIdx];
-    imgEl.style.transform = 'scale(1) translate(0px, 0px)';
-    lbZoom = 1; lbPanX = 0; lbPanY = 0;
-    document.getElementById('lb-prev').classList.toggle('ocult', lbFotos.length <= 1 || lbIdx === 0);
-    document.getElementById('lb-next').classList.toggle('ocult', lbFotos.length <= 1 || lbIdx === lbFotos.length - 1);
-    document.getElementById('lb-counter').textContent = lbFotos.length > 1 ? `${lbIdx + 1} / ${lbFotos.length}` : '';
-  }
-
-  function lightboxNav(dir) {
-    lbIdx = Math.max(0, Math.min(lbFotos.length - 1, lbIdx + dir));
-    actualitzarLightbox();
-  }
-
-  function lightboxClickFora(e) {
-    if (e.target === document.getElementById('lightbox')) tancarLightbox();
-  }
-
-  function aplicarTransformLb() {
-    document.getElementById('lightbox-img').style.transform = `scale(${lbZoom}) translate(${lbPanX}px, ${lbPanY}px)`;
-  }
-
-  // Teclat
-  document.addEventListener('keydown', e => {
-    if (!document.getElementById('lightbox').classList.contains('actiu')) return;
-    if (e.key === 'Escape') tancarLightbox();
-    if (e.key === 'ArrowLeft') lightboxNav(-1);
-    if (e.key === 'ArrowRight') lightboxNav(1);
-  });
-
-  // Touch events (swipe + pinch)
-  const lbImg = document.getElementById('lightbox-img');
-
-  lbImg.addEventListener('touchstart', e => {
-    if (e.touches.length === 2) {
-      lbPinchDist = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-    } else if (e.touches.length === 1) {
-      lbSwipeX = e.touches[0].clientX;
-      lbSwipeY = e.touches[0].clientY;
-    }
-  }, { passive: true });
-
-  lbImg.addEventListener('touchmove', e => {
-    if (e.touches.length === 2 && lbPinchDist !== null) {
-      e.preventDefault();
-      const dist = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-      lbZoom = Math.min(5, Math.max(1, lbZoom * (dist / lbPinchDist)));
-      lbPinchDist = dist;
-      aplicarTransformLb();
-    } else if (e.touches.length === 1 && lbZoom > 1) {
-      e.preventDefault();
-      lbPanX += (e.touches[0].clientX - lbSwipeX) / lbZoom;
-      lbPanY += (e.touches[0].clientY - lbSwipeY) / lbZoom;
-      lbSwipeX = e.touches[0].clientX;
-      lbSwipeY = e.touches[0].clientY;
-      aplicarTransformLb();
-    }
-  }, { passive: false });
-
-  // Swipe i doble tap fusionats en un sol listener
-  let lbLastTap = 0;
-  lbImg.addEventListener('touchend', e => {
-    lbPinchDist = null;
-    if (e.changedTouches.length !== 1) return;
-
-    const now = Date.now();
-    const dx = lbSwipeX !== null ? e.changedTouches[0].clientX - lbSwipeX : 0;
-
-    if (now - lbLastTap < 300) {
-      // Doble tap → resetar zoom
-      lbZoom = 1; lbPanX = 0; lbPanY = 0;
-      aplicarTransformLb();
-      lbLastTap = 0;
-    } else {
-      // Swipe → canviar foto (només si no hi ha zoom actiu)
-      if (lbZoom <= 1 && lbSwipeX !== null && Math.abs(dx) > 50) {
-        lightboxNav(dx < 0 ? 1 : -1);
-      }
-      lbLastTap = now;
-    }
-  }, { passive: true });
-
   function inicialitzarPortada() {
     const dies = ['diumenge','dilluns','dimarts','dimecres','dijous','divendres','dissabte'];
     const mesos = ['de gener','de febrer','de març','d\'abril','de maig','de juny','de juliol','d\'agost','de setembre','d\'octubre','de novembre','de desembre'];
@@ -1757,7 +1384,6 @@
     try {
       const res = await fetch(API_URL);
       tutorials = await res.json();
-      actualitzarStats();
       actualitzarPortadaStats();
       if (renderitzar) renderTutorials();
     } catch (err) {
@@ -1766,44 +1392,10 @@
     }
   }
 
-  function actualitzarStats() {
-    const total = tutorials.length;
-    const fets = tutorials.filter(t => t['feta?'] === 'si' || t['feta?'] === 'sí' || t['feta?'] === 'true').length;
-    document.getElementById('stat-total').textContent = total;
-    document.getElementById('stat-fets').textContent = fets;
-    const pendents = tutorials.filter(t => (t['intencio'] || '').toLowerCase().trim() === 'pendent').length;
-    document.getElementById('stat-pendents').textContent = pendents;
-    document.getElementById('stats-bar').style.display = total > 0 ? 'flex' : 'none';
-  }
-
-  function filtrarPerStat(tipus) {
-    // Actualitzar estat visual dels stats
-    document.querySelectorAll('.stat-clickable').forEach(s => s.classList.remove('actiu'));
-    const idx = { tots: 0, fets: 1, pendents: 2 }[tipus];
-    document.querySelectorAll('.stat-clickable')[idx]?.classList.add('actiu');
-
-    // Activar el filtre d'intenció corresponent
-    if (tipus === 'fets') {
-      filtreIntencio = 'fets';
-      document.querySelectorAll('[data-intencio]').forEach(c => c.classList.remove('active'));
-      document.querySelector('[data-intencio="fets"]')?.classList.add('active');
-    } else if (tipus === 'pendents') {
-      filtreIntencio = 'pendents';
-      document.querySelectorAll('[data-intencio]').forEach(c => c.classList.remove('active'));
-      document.querySelector('[data-intencio="pendents"]')?.classList.add('active');
-    } else {
-      filtreIntencio = 'totes';
-      document.querySelectorAll('[data-intencio]').forEach(c => c.classList.remove('active'));
-      document.querySelector('[data-intencio="totes"]')?.classList.add('active');
-    }
-    renderTutorials();
-  }
-
   function setFilter(cat, btn) {
     filtreActiu = cat;
     document.querySelectorAll('[data-cat]').forEach(c => c.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('.stat-clickable').forEach(s => s.classList.remove('actiu'));
     renderTutorials();
   }
 
@@ -1815,13 +1407,8 @@
         (t['nom'] || '').toLowerCase().includes(cerca) ||
         (t['nom del vídeo'] || '').toLowerCase().includes(cerca) ||
         (t['canal de YT (autoria)'] || '').toLowerCase().includes(cerca);
-      const intencioT = (t['intencio'] || '').toLowerCase().trim();
       const feta = t['feta?'] === 'si' || t['feta?'] === 'sí' || t['feta?'] === 'true';
-      const coincideixIntencio = filtreIntencio === 'totes' ||
-        (filtreIntencio === 'fets' && feta) ||
-        (filtreIntencio === 'pendents' && intencioT === 'pendent') ||
-        (filtreIntencio !== 'fets' && filtreIntencio !== 'pendents' && intencioT === filtreIntencio);
-      return coincideixCat && coincideixCerca && coincideixIntencio;
+      return coincideixCat && coincideixCerca;
     });
 
     const container = document.getElementById('tutorials-container');
@@ -1871,7 +1458,6 @@
 
   function cardHTML(t) {
     const feta = t['feta?'] === 'si' || t['feta?'] === 'sí' || t['feta?'] === 'true';
-    const intencio = (t['intencio'] || '').toLowerCase().trim();
     const notaSessio = t['nota sessio'] || '';
     const vegades = parseInt(t['vegades fet']) || 0;
     const valoracio = parseInt(t['valoracio']) || 0;
@@ -1890,13 +1476,10 @@
       ? `<a href="${escHTML(url)}" target="_blank"><img class="card-thumb" src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="${nomVideoEsc}" loading="lazy"></a>`
       : `<div class="card-thumb-placeholder">🎬</div>`;
 
-    const franjaColor = intencio === 'en curs' ? '#D97706' : intencio === 'propera costura' ? '#7C3AED' : feta ? '#059669' : 'var(--border)';
+    const franjaColor = feta ? '#059669' : 'var(--border)';
 
     let pillsHTML = '';
-    if (intencio === 'en curs') pillsHTML += `<span class="pill-intencio encurs">En curs</span>`;
-    if (intencio === 'propera costura') pillsHTML += `<span class="pill-intencio proxima">Propera costura</span>`;
-    if (intencio === 'pendent') pillsHTML += `<span class="pill-intencio pendent">Pendent</span>`;
-    if (feta) pillsHTML += `<span class="pill-intencio feta">✓ Feta${vegades > 0 ? ` (${vegades})` : ''}</span>`;
+
     // sense pill si no hi ha intenció ni feta
 
     const vegadesText = vegades === 0 ? 'Encara no fet' : vegades === 1 ? 'Fet 1 vegada' : `Fet ${vegades} vegades`;
@@ -1908,25 +1491,18 @@
         <div class="card-nom">${nomEsc}</div>
       </div>
       ${nomVideoEsc ? `<div class="card-video-nom">"${nomVideoEsc}"</div>` : ''}
-      <div class="card-meta">
-        ${compositorEsc ? `<div class="card-meta-row"><span class="card-meta-icon">🎼</span>${compositorEsc}</div>` : ''}
-        ${interpretsEsc ? `<div class="card-meta-row"><span class="card-meta-icon">🎤</span>${interpretsEsc}</div>` : ''}
-        ${genereEsc ? `<div class="card-meta-row"><span class="card-meta-icon">🎵</span>${genereEsc}</div>` : ''}
-        ${catEsc ? `<div><span class="card-categoria">${catEsc}</span></div>` : ''}
-      </div>
+      ${(compositorEsc || interpretsEsc || genereEsc || catEsc) ? `<div class="card-meta">
+        ${compositorEsc ? `<span class="card-meta-icon"><i class="ti ti-feather" aria-hidden="true"></i></span><span class="card-meta-value">${compositorEsc}</span>` : ''}
+        ${interpretsEsc ? `<span class="card-meta-icon"><i class="ti ti-microphone-2" aria-hidden="true"></i></span><span class="card-meta-value">${interpretsEsc}</span>` : ''}
+        ${genereEsc ? `<span class="card-meta-icon"><i class="ti ti-music" aria-hidden="true"></i></span><span class="card-meta-value">${genereEsc}</span>` : ''}
+        ${catEsc ? `<span class="card-meta-icon"><i class="ti ti-tag" aria-hidden="true"></i></span><span class="card-meta-value">${catEsc}</span>` : ''}
+      </div>` : ''}
       <div class="card-pills-row">${pillsHTML}</div>
       ${starsHTML}
       ${notaSessio ? `<div class="card-nota-sessio">${escHTML(notaSessio)}</div>` : ''}
 
       ${comentari ? `<div class="card-comentari">${escHTML(comentari)}</div>` : ''}
-      <div class="card-galeria">
-        <div class="card-galeria-label">Les meves fotos</div>
-        <div class="card-galeria-fotos" data-nom="${nomEsc}">
-          ${(t['fotos'] || '').split(',').filter(u => u.trim()).map(u => `<div class="card-galeria-foto-wrap"><img src="${u.trim()}" class="card-galeria-foto" loading="lazy" onclick="obrirLightbox(this)"><button class="card-galeria-delete" onclick="event.stopPropagation();eliminarFoto(this,'${nomEsc}','${u.trim()}')" title="Eliminar foto">✕</button></div>`).join('')}
-          <button class="card-galeria-add" onclick="afegirFoto(this)" title="Afegir foto">+</button>
-          <input type="file" accept="image/*" style="display:none" onchange="mostrarFoto(event, this)">
-        </div>
-      </div>
+
       <div class="card-actions">
         ${url ? `<a href="${escHTML(url)}" target="_blank" class="yt-link">▶ Veure vídeo</a>` : ''}
         <button class="btn btn-edit" onclick='obrirEdicio(${JSON.stringify(t)})'>Editar</button>
@@ -1936,7 +1512,6 @@
 
   function filaHTML(t, idx) {
     const feta = t['feta?'] === 'si' || t['feta?'] === 'sí' || t['feta?'] === 'true';
-    const intencio = (t['intencio'] || '').toLowerCase().trim();
     const notaSessio = t['nota sessio'] || '';
     const vegades = parseInt(t['vegades fet']) || 0;
     const valoracio = parseInt(t['valoracio']) || 0;
@@ -1955,10 +1530,7 @@
       : `<div style="width:56px;height:32px;border-radius:4px;background:var(--surface2);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;">🎬</div>`;
 
     let pillsHTML = '';
-    if (intencio === 'en curs') pillsHTML += `<span class="pill-intencio encurs">En curs</span>`;
-    if (intencio === 'propera costura') pillsHTML += `<span class="pill-intencio proxima">Propera costura</span>`;
-    if (intencio === 'pendent') pillsHTML += `<span class="pill-intencio pendent">Pendent</span>`;
-    if (feta) pillsHTML += `<span class="pill-intencio feta">✓ Feta${vegades > 0 ? ` (${vegades})` : ''}</span>`;
+
 
     const starsHTML = valoracio > 0 ? `<div style="font-size:12px;color:#E8A000;flex-shrink:0">${[1,2,3,4,5].map(i => `<span style="color:${i <= valoracio ? '#E8A000' : 'var(--border)'}">★</span>`).join('')}</div>` : '';
 
@@ -1966,10 +1538,10 @@
 
     const expandit = `<div class="fila-expandida" id="exp-${filaId}">
       ${pillsHTML ? `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px;">${pillsHTML}</div>` : ''}
-      ${compositorEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">🎼 ${compositorEsc}</div>` : ''}
-      ${interpretsEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">🎤 ${interpretsEsc}</div>` : ''}
-      ${genereEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">🎵 ${genereEsc}</div>` : ''}
-      ${catEsc ? `<div style="margin-bottom:6px;"><span class="card-categoria">${catEsc}</span></div>` : ''}
+      ${compositorEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px;"><i class="ti ti-feather" style="font-size:14px;color:var(--accent);" aria-hidden="true"></i>${compositorEsc}</div>` : ''}
+      ${interpretsEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px;"><i class="ti ti-microphone-2" style="font-size:14px;color:var(--accent);" aria-hidden="true"></i>${interpretsEsc}</div>` : ''}
+      ${genereEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px;"><i class="ti ti-music" style="font-size:14px;color:var(--accent);" aria-hidden="true"></i>${genereEsc}</div>` : ''}
+      ${catEsc ? `<div style="margin-bottom:6px;display:flex;align-items:center;gap:6px;"><i class="ti ti-tag" style="font-size:14px;color:var(--accent);" aria-hidden="true"></i><span class="card-categoria">${catEsc}</span></div>` : ''}
       ${nomVideoEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">"${nomVideoEsc}"</div>` : ''}
       ${notaSessio ? `<div class="card-nota-sessio" style="margin:6px 0">${escHTML(notaSessio)}</div>` : ''}
       ${comentari ? `<div class="card-comentari">${escHTML(comentari)}</div>` : ''}
@@ -2068,7 +1640,7 @@
       interprets: document.getElementById('f-interprets').value.trim(),
       genere: document.getElementById('f-genere').value.trim(),
       url: document.getElementById('f-url').value.trim(),
-      feta: document.getElementById('f-feta').checked ? 'si' : 'no',
+      feta: 'no',
       comentari: document.getElementById('f-comentari').value.trim()
     });
     try {
@@ -2092,7 +1664,6 @@
   function netejarFormulari() {
     ['f-nom','f-nom-video','f-canal','f-compositor','f-interprets','f-genere','f-url','f-comentari'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('f-categoria').value = '';
-    document.getElementById('f-feta').checked = false;
   }
 
   // EDITAR (modal unificat: progrés + dades)
@@ -2114,17 +1685,13 @@
 
     // --- Progrés ---
     document.getElementById('act-nota').value = t['nota sessio'] || '';
-    document.getElementById('act-vegades-num').textContent = parseInt(t['vegades fet']) || 0;
+    window._editVegades = parseInt(t['vegades fet']) || 0;
+    window._editFeta = t['feta?'] || 'no';
     const valoracio = parseInt(t['valoracio']) || 0;
     document.querySelectorAll('#act-stars .star').forEach(s => {
       s.classList.toggle('on', parseInt(s.dataset.v) <= valoracio);
     });
-    const intencio = (t['intencio'] || '').toLowerCase().trim();
-    document.querySelectorAll('.chip-intencio').forEach(b => {
-      b.classList.remove('actiu');
-      if (b.dataset.val === intencio) b.classList.add('actiu');
-    });
-    if (!intencio) document.querySelector('.chip-intencio[data-val=""]').classList.add('actiu');
+
 
     document.getElementById('modal-edicio').classList.add('open');
     document.getElementById('status-edicio').className = 'status-msg';
@@ -2155,9 +1722,9 @@
     btn.textContent = 'Guardant...';
 
     // Recollir camps de PROGRÉS
-    const vegades = parseInt(document.getElementById('act-vegades-num').textContent) || 0;
-    const feta = vegades >= 1 ? 'si' : 'no';
-    const intencio = document.querySelector('.chip-intencio.actiu')?.dataset.val || '';
+    const vegades = window._editVegades || 0;
+    const feta = window._editFeta || 'no';
+    const intencio = '';
     const nota = document.getElementById('act-nota').value.trim();
     const valoracio = document.querySelectorAll('#act-stars .star.on').length;
 
@@ -2219,24 +1786,6 @@
     eliminarTutorial(nom);
   }
 
-  function setFiltreIntencio(val, btn) {
-    filtreIntencio = val;
-    document.querySelectorAll('[data-intencio]').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.stat-clickable').forEach(s => s.classList.remove('actiu'));
-    renderTutorials();
-  }
-
-  function seleccionarIntencio(btn) {
-    document.querySelectorAll('.chip-intencio').forEach(b => b.classList.remove('actiu'));
-    btn.classList.add('actiu');
-  }
-
-  function canviarVegades(delta) {
-    const el = document.getElementById('act-vegades-num');
-    const val = Math.max(0, parseInt(el.textContent) + delta);
-    el.textContent = val;
-  }
 
   document.querySelectorAll('#act-stars .star').forEach(s => {
     s.addEventListener('click', () => {
@@ -2246,88 +1795,6 @@
       });
     });
   });
-
-  // GALERIA DE FOTOS
-  async function eliminarFoto(btn, nomTutorial, urlFoto) {
-    if (!confirm('Eliminar aquesta foto?')) return;
-    const wrap = btn.parentElement;
-    const container = wrap.parentElement;
-    wrap.style.opacity = '0.4';
-    try {
-      const params = new URLSearchParams({ accio: 'eliminarFoto', nom: nomTutorial, urlFoto: urlFoto });
-      const res = await fetch(API_URL + '?' + params.toString());
-      const data = await res.json();
-      if (data.ok) {
-        wrap.remove();
-      } else {
-        wrap.style.opacity = '1';
-        alert('Error en eliminar la foto: ' + (data.error || 'Error desconegut'));
-      }
-    } catch (err) {
-      wrap.style.opacity = '1';
-      alert('Error de connexió en eliminar la foto.');
-    }
-  }
-
-  function afegirFoto(btn) {
-    const input = btn.nextElementSibling;
-    input.click();
-  }
-
-  function mostrarFoto(event, input) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const container = input.parentElement;
-    const nomTutorial = container.dataset.nom || '';
-    const btn = container.querySelector('.card-galeria-add');
-
-    // Mostrar placeholder mentre es puja
-    const wrap = document.createElement('div');
-    wrap.className = 'card-galeria-foto-wrap';
-    const imgPreview = document.createElement('img');
-    imgPreview.className = 'card-galeria-foto';
-    imgPreview.style.opacity = '0.4';
-    imgPreview.title = 'Pujant...';
-    wrap.appendChild(imgPreview);
-    container.insertBefore(wrap, btn);
-
-    const reader = new FileReader();
-    reader.onload = async function(e) {
-      const base64 = e.target.result;
-      imgPreview.src = base64; // mostra preview local mentre puja
-
-      try {
-        const formData = new FormData();
-        formData.append('accio', 'uploadFoto');
-        formData.append('base64', base64);
-        formData.append('nomFitxer', file.name);
-        formData.append('nomTutorial', nomTutorial);
-        const res = await fetch(API_URL, { method: 'POST', body: formData });
-        const data = await res.json();
-
-        if (data.ok && data.url) {
-          imgPreview.src = data.url;
-          imgPreview.style.opacity = '1';
-          imgPreview.title = file.name;
-          const deleteBtn = document.createElement('button');
-          deleteBtn.className = 'card-galeria-delete';
-          deleteBtn.title = 'Eliminar foto';
-          deleteBtn.textContent = '✕';
-          deleteBtn.onclick = (e) => { e.stopPropagation(); eliminarFoto(deleteBtn, nomTutorial, data.url); };
-          wrap.appendChild(deleteBtn);
-        } else {
-          wrap.remove();
-          alert('Error en pujar la foto: ' + (data.error || 'Error desconegut'));
-        }
-      } catch (err) {
-        wrap.remove();
-        alert('Error de connexió en pujar la foto.');
-      }
-      input.value = '';
-    };
-    reader.readAsDataURL(file);
-  }
 
   // UTILS
   function mostrarStatus(id, tipus, msg) {
@@ -2378,14 +1845,6 @@
       <div class="celebracio-text" id="celebracio-text"></div>
       <button class="celebracio-btn" onclick="tancarCelebracio()">Tancar</button>
     </div>
-  </div>
-
-  <div class="lightbox-overlay" id="lightbox" onclick="lightboxClickFora(event)">
-    <span class="lightbox-close" onclick="tancarLightbox()">✕</span>
-    <span class="lightbox-nav prev" id="lb-prev" onclick="lightboxNav(-1)">‹</span>
-    <img class="lightbox-img" id="lightbox-img" src="" alt="">
-    <span class="lightbox-nav next" id="lb-next" onclick="lightboxNav(1)">›</span>
-    <div class="lightbox-counter" id="lb-counter"></div>
   </div>
 
 </body>
