@@ -68,15 +68,6 @@
     gap: 0.5rem;
   }
 
-  .logo-accent {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .logo-icon {
-    font-size: 1rem;
-  }
-
   nav {
     display: flex;
     gap: 0.25rem;
@@ -188,25 +179,6 @@
   }
 
   textarea { resize: vertical; min-height: 80px; }
-
-  .checkbox-row {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.65rem 0;
-  }
-
-  .checkbox-row input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--accent);
-    cursor: pointer;
-  }
-
-  .checkbox-row span {
-    font-size: 0.925rem;
-    color: var(--text);
-  }
 
   .form-actions {
     margin-top: 1.5rem;
@@ -439,20 +411,6 @@
     flex: 1;
   }
 
-  .badge-feta {
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.68rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .badge-feta.si { background: #e2ebe9; color: var(--success); border: 1px solid #b9d2cb; }
-  .badge-feta.no { background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
-
   .card-video-nom {
     font-size: 0.875rem;
     color: var(--text);
@@ -623,7 +581,6 @@
   }
 
   .card-franja { height: 6px; width: 100%; }
-  .card-pills-row { display: flex; gap: 5px; flex-wrap: wrap; margin: 6px 0 4px; }
   .card-nota-sessio { font-size: 0.78rem; color: var(--text-muted); font-style: italic; padding: 5px 8px; border-left: 2px solid #D97706; background: #FFFBEB; margin: 4px 0; }
   .star-rating { display: flex; gap: 3px; margin: 4px 0 2px; }
   .star-rating .star { font-size: 18px; cursor: pointer; color: var(--border); transition: color 0.1s; line-height: 1; }
@@ -631,7 +588,6 @@
   .card-stars { display: flex; gap: 2px; font-size: 14px; }
   .card-stars .star-on { color: #E8A000; }
   .card-stars .star-off { color: var(--border); }
-  .card-vegades { font-size: 0.75rem; color: var(--text-muted); margin: 4px 0 6px; }
 
   /* PORTADA INICI */
   .portada-inici {
@@ -722,42 +678,6 @@
   .portada-stat-link:hover { background: rgba(36,54,66,0.07); }
   .portada-stat-link:hover .portada-stat-num { color: var(--primary); }
 
-  .portada-novetats {
-    background: var(--surface);
-    border: 1.5px solid #c97d8a;
-    border-radius: 14px;
-    padding: 1.2rem 1.4rem;
-    margin: -0.2rem 3px 1.2rem;
-    text-align: left;
-    font-size: 0.92rem;
-    color: var(--text);
-    line-height: 1.6;
-  }
-  .portada-novetats ol { padding-left: 1.2rem; margin: 0.4rem 0; }
-  .portada-novetats li { margin-bottom: 0.2rem; }
-  .portada-novetats p { margin: 0.4rem 0; }
-  .novetats-titol {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-  }
-  .novetats-btn-tancar {
-    display: block;
-    width: 100%;
-    padding: 0.55rem 1rem;
-    border-radius: 20px;
-    border: 1.5px solid var(--primary);
-    background: transparent;
-    color: var(--primary);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    cursor: pointer;
-    transition: var(--transition);
-    margin-top: 0.5rem;
-  }
-  .novetats-btn-tancar:hover { background: var(--primary); color: #fff; }
-
   /* ── CELEBRACIÓ ── */
   .celebracio-overlay {
     display: none;
@@ -828,7 +748,6 @@
     .search-box { margin-left: 0; width: 100%; }
     .search-box input { width: 100%; }
     .filters-bar { gap: 0.4rem; }
-    .logo span { display: none; }
   }
   /* PANTALLA CONTRASENYA */
   .password-overlay {
@@ -914,9 +833,8 @@
 </div>
 
 <header>
-  <div class="logo">
+  <div class="logo" onclick="showView('inici')" style="cursor:pointer" title="Inici">
     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDIiIGZpbGw9IiMzMzQ5NWEiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNTYsIDI3MCkiPgogICAgPHBhdGggZD0iTS01NiwtMTIyIEwtNTYsLTE1IFEtNTYsMzYgMCw0NiBRNTYsMzYgNTYsLTE1IEw1NiwtMTIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNlZmYxZjIiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSI0NiIgeDI9IjAiIHkyPSIxMjIiIHN0cm9rZT0iI2VmZjFmMiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNLTI2LC05MiBRMCwtNjYgMjYsLTkyIiBmaWxsPSJub25lIiBzdHJva2U9IiMzZDdhNmUiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNLTM2LC02MiBRMCwtMjYgMzYsLTYyIiBmaWxsPSJub25lIiBzdHJva2U9IiMzZDdhNmUiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjYiLz4KICA8L2c+Cjwvc3ZnPg==" alt="Cant" style="height:32px;width:32px;border-radius:20%;display:inline-block;vertical-align:middle">
-    Cant
   </div>
   <nav>
     <button class="nav-btn active" onclick="showView('inici')">Inici</button>
@@ -934,17 +852,17 @@
       <h1 class="portada-titol">Benvinguda, <span class="portada-nom">cantaire!</span></h1>
       <p class="portada-frase" id="portada-frase"></p>
       <div class="portada-stats-row">
-        <div class="portada-stat portada-stat-link" onclick="anarABiblioteca('tots')" title="Veure tots els tutorials">
+        <div class="portada-stat portada-stat-link" onclick="anarABiblioteca()" title="Veure tots els tutorials">
           <span class="portada-stat-num" id="p-stat-total">—</span>
           <span class="portada-stat-label">tutorials</span>
         </div>
         <div class="portada-stat-sep"></div>
-        <div class="portada-stat portada-stat-link" onclick="anarABiblioteca('fets')" title="Veure tutorials cantats">
+        <div class="portada-stat portada-stat-link" onclick="anarABiblioteca()" title="Veure tutorials cantats">
           <span class="portada-stat-num" id="p-stat-fets">—</span>
           <span class="portada-stat-label">cantades</span>
         </div>
         <div class="portada-stat-sep"></div>
-        <div class="portada-stat portada-stat-link" onclick="anarABiblioteca('tots')" title="Veure la biblioteca">
+        <div class="portada-stat portada-stat-link" onclick="anarABiblioteca()" title="Veure la biblioteca">
           <span class="portada-stat-num" id="p-stat-cats">—</span>
           <span class="portada-stat-label">categories</span>
         </div>
@@ -1277,7 +1195,7 @@
     }
   });
 
-  function anarABiblioteca(filtre) {
+  function anarABiblioteca() {
     showViewDirect('biblioteca').then(() => {
       renderTutorials();
     });
@@ -1353,9 +1271,9 @@
     document.getElementById('portada-data').textContent = text;
 
     const frases = [
-      'Preparada per explorar i crear?',
-      'Preparada per explorar i crear?',
-      'Preparada per explorar i crear?',
+      'Prepara la veu, que comencem!',
+      'Prepara la veu, que comencem!',
+      'Prepara la veu, que comencem!',
       'Vinga, entra algun tutorial més!',
       'Toqueteja una mica més l\'app, i em dius! ;)'
     ];
@@ -1406,8 +1324,10 @@
       const coincideixCerca = !cerca ||
         (t['nom'] || '').toLowerCase().includes(cerca) ||
         (t['nom del vídeo'] || '').toLowerCase().includes(cerca) ||
+        (t['compositor/a'] || '').toLowerCase().includes(cerca) ||
+        (t['intèrprets'] || '').toLowerCase().includes(cerca) ||
+        (t['gènere musical'] || '').toLowerCase().includes(cerca) ||
         (t['canal de YT (autoria)'] || '').toLowerCase().includes(cerca);
-      const feta = t['feta?'] === 'si' || t['feta?'] === 'sí' || t['feta?'] === 'true';
       return coincideixCat && coincideixCerca;
     });
 
@@ -1416,7 +1336,7 @@
 
     if (filtrats.length === 0) {
       container.innerHTML = `<div class="empty-state">
-        <div class="empty-icon">🧵</div>
+        <div class="empty-icon"><svg width="28" height="48" viewBox="0 0 28 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.4"><path d="M16 2 L6 16 L16 20 L8 34 Q6 38 10 42 Q14 46 18 42 Q22 38 18 34 Q16 32 12 33 L20 18 L10 14 L20 2" fill="currentColor"/></svg></div>
         <div class="empty-title">${tutorials.length === 0 ? 'Encara no hi ha tutorials' : 'Cap resultat'}</div>
         <div class="empty-text">${tutorials.length === 0 ? 'Afegeix el primer tutorial amb el botó de dalt.' : 'Prova amb altres filtres o una cerca diferent.'}</div>
       </div>`;
@@ -1478,12 +1398,6 @@
 
     const franjaColor = feta ? '#059669' : 'var(--border)';
 
-    let pillsHTML = '';
-
-    // sense pill si no hi ha intenció ni feta
-
-    const vegadesText = vegades === 0 ? 'Encara no fet' : vegades === 1 ? 'Fet 1 vegada' : `Fet ${vegades} vegades`;
-
     return `<div class="tutorial-card">
       <div class="card-franja" style="background:${franjaColor}"></div>
       ${thumbHTML}
@@ -1497,7 +1411,6 @@
         ${genereEsc ? `<span class="card-meta-icon"><i class="ti ti-music" aria-hidden="true"></i></span><span class="card-meta-value">${genereEsc}</span>` : ''}
         ${catEsc ? `<span class="card-meta-icon"><i class="ti ti-tag" aria-hidden="true"></i></span><span class="card-meta-value">${catEsc}</span>` : ''}
       </div>` : ''}
-      <div class="card-pills-row">${pillsHTML}</div>
       ${starsHTML}
       ${notaSessio ? `<div class="card-nota-sessio">${escHTML(notaSessio)}</div>` : ''}
 
@@ -1529,15 +1442,12 @@
       ? `<a href="${escHTML(url)}" target="_blank" style="flex-shrink:0" onclick="event.stopPropagation()"><img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="${nomVideoEsc}" style="width:56px;height:32px;object-fit:cover;border-radius:4px;display:block;"></a>`
       : `<div style="width:56px;height:32px;border-radius:4px;background:var(--surface2);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;">🎬</div>`;
 
-    let pillsHTML = '';
-
 
     const starsHTML = valoracio > 0 ? `<div style="font-size:12px;color:#E8A000;flex-shrink:0">${[1,2,3,4,5].map(i => `<span style="color:${i <= valoracio ? '#E8A000' : 'var(--border)'}">★</span>`).join('')}</div>` : '';
 
     const filaId = 'fila-' + idx;
 
     const expandit = `<div class="fila-expandida" id="exp-${filaId}">
-      ${pillsHTML ? `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px;">${pillsHTML}</div>` : ''}
       ${compositorEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px;"><i class="ti ti-feather" style="font-size:14px;color:var(--accent);" aria-hidden="true"></i>${compositorEsc}</div>` : ''}
       ${interpretsEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px;"><i class="ti ti-microphone-2" style="font-size:14px;color:var(--accent);" aria-hidden="true"></i>${interpretsEsc}</div>` : ''}
       ${genereEsc ? `<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px;"><i class="ti ti-music" style="font-size:14px;color:var(--accent);" aria-hidden="true"></i>${genereEsc}</div>` : ''}
