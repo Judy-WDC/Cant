@@ -857,11 +857,6 @@
           <span class="portada-stat-label">tutorials</span>
         </div>
         <div class="portada-stat-sep"></div>
-        <div class="portada-stat portada-stat-link" onclick="anarABiblioteca()" title="Veure tutorials cantats">
-          <span class="portada-stat-num" id="p-stat-fets">—</span>
-          <span class="portada-stat-label">cantades</span>
-        </div>
-        <div class="portada-stat-sep"></div>
         <div class="portada-stat portada-stat-link" onclick="anarABiblioteca()" title="Veure la biblioteca">
           <span class="portada-stat-num" id="p-stat-cats">—</span>
           <span class="portada-stat-label">categories</span>
@@ -895,6 +890,7 @@
       <button class="filter-chip" data-cat="Cant, duets" onclick="setFilter('Cant, duets', this)">Cant, duets</button>
       <button class="filter-chip" data-cat="Coral, música sacra" onclick="setFilter('Coral, música sacra', this)">Coral, música sacra</button>
       <button class="filter-chip" data-cat="Coral, altres" onclick="setFilter('Coral, altres', this)">Coral, altres</button>
+      <button class="filter-chip" data-cat="Cançons" onclick="setFilter('Cançons', this)">Cançons</button>
       <div class="search-box">
         <span class="search-icon">🔍</span>
         <input type="text" id="search-input" placeholder="Cercar..." oninput="renderTutorials()">
@@ -937,6 +933,7 @@
             <option value="Cant, duets">Cant, duets</option>
             <option value="Coral, música sacra">Coral, música sacra</option>
             <option value="Coral, altres">Coral, altres</option>
+            <option value="Cançons">Cançons</option>
           </select>
         </div>
         <div class="form-group full">
@@ -1023,6 +1020,7 @@
             <option value="Cant, duets">Cant, duets</option>
             <option value="Coral, música sacra">Coral, música sacra</option>
             <option value="Coral, altres">Coral, altres</option>
+            <option value="Cançons">Cançons</option>
           </select>
         </div>
         <div class="form-group full">
@@ -1231,7 +1229,7 @@
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const colors = ['var(--primary)','#e8a0b0','#f4c842','#4a90d9','#7bc67e','#eff1f2'];
+    const colors = ['#33495a','#e8a0b0','#f4c842','#4a90d9','#7bc67e','#eff1f2'];
     const particles = Array.from({length: 120}, () => ({
       x: Math.random() * canvas.width,
       y: -10 - Math.random() * 100,
@@ -1274,8 +1272,7 @@
       'Prepara la veu, que comencem!',
       'Prepara la veu, que comencem!',
       'Prepara la veu, que comencem!',
-      'Vinga, entra algun tutorial més!',
-      'Toqueteja una mica més l\'app, i em dius! ;)'
+      'Vinga, entra algun tutorial més!'
     ];
     let idx = 0;
     try { idx = parseInt(localStorage.getItem('cant-frase-idx') || '0') % frases.length; } catch(e) {}
@@ -1285,8 +1282,6 @@
 
   function actualitzarPortadaStats() {
     document.getElementById('p-stat-total').textContent = tutorials.length || '—';
-    const fets = tutorials.filter(t => t['feta?'] === 'si' || t['feta?'] === 'sí' || t['feta?'] === 'true').length;
-    document.getElementById('p-stat-fets').textContent = tutorials.length ? fets : '—';
     const cats = new Set(tutorials.map(t => t['categoria']).filter(Boolean)).size;
     document.getElementById('p-stat-cats').textContent = tutorials.length ? cats : '—';
     const ultim = tutorials[tutorials.length - 1];
